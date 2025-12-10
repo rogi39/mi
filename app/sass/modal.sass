@@ -1,0 +1,106 @@
+@import "main"
+
+.title_mb20
+	margin-bottom: 20px
+
+.modal
+	position: fixed
+	z-index: 24
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	backdrop-filter: blur(15px)
+	background: rgba(28, 21, 31, 0.4)
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	overflow-y: scroll
+	// display: none
+	+media-breakpoint-up(lg)
+		@media screen and (min-height: 600px)
+			align-items: center
+	&.open
+		opacity: 1
+		display: flex
+		transition: opacity 300ms
+	&_center
+		align-items: center
+	/* .modal__block */
+	&__block
+		background-color: #fff
+		padding: 20px
+		max-width: 1310px
+		width: 100%
+		position: relative
+		z-index: 1
+		+media-breakpoint-up(sm)
+			padding: 40px
+
+	/* .modal__close */
+	&__close
+		height: 30px
+		width: 30px
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		z-index: 20
+		right: 20px
+		top: 20px
+		cursor: pointer
+		+media-breakpoint-up(sm)
+			top: 40px
+			right: 40px
+
+	/* .modal__close-svg */
+	&__close-svg
+
+	/* .modal__text*/
+	&__text
+		font-weight: 400
+		font-size: 16px
+		line-height: 130%
+		letter-spacing: 0.05em
+		color: #303031
+		+media-breakpoint-up(sm)
+			font-size: 20px
+		// margin-bottom: 60px
+	/* .modal__top */
+	&__top
+		display: flex
+		flex-wrap: wrap
+		row-gap: 20px
+		+media-breakpoint-up(sm)
+			column-gap: 40px
+			row-gap: 40px
+		+media-breakpoint-up(lg)
+			row-gap: 60px
+
+	&__top_one-image
+		gap: 20px
+		+media-breakpoint-up(sm)
+			gap: 60px
+		+media-breakpoint-up(lg)
+			margin-top: 90px
+		.modal__info
+			flex: 1
+			+media-breakpoint-up(lg)
+				order: 1
+		.modal__img-block
+			+media-breakpoint-up(lg)
+				order: 0
+
+	/* .modal__info */
+	&__info
+		flex: 0 0 100%
+
+	/* .modal__img-block */
+	&__img-block
+		flex: 0 0 100%
+		+media-breakpoint-up(lg)
+			flex: 0 0 calc(50% - 20px)
+
+	/* .modal__img */
+	&__img
+		width: 100%
